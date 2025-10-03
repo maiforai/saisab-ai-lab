@@ -15,45 +15,44 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-20 bg-background">
+    <section id="about" className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
-              About Me
-            </span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-10 text-foreground">
+            About
           </h2>
 
-          <div className="space-y-6 text-lg text-foreground/90 mb-16">
+          <div className="space-y-5 text-base text-foreground/85 mb-14 leading-relaxed">
             <p>
               I am currently pursuing my MS in Data Science and Engineering at IISER Bhopal, where my research focuses on 
-              overcoming imperfect retrieval augmentation and knowledge conflicts in RAG frameworks. My work sits at the 
-              intersection of theoretical research and practical application, building systems that push the boundaries of 
-              what language models can achieve.
+              overcoming imperfect retrieval augmentation and knowledge conflicts in RAG frameworks. My work explores 
+              the intersection of theoretical foundations and practical implementations in natural language processing 
+              and large language models.
             </p>
             <p>
-              Previously, I developed Structured Adversarial Synthesis (SAS), a novel multi-agent framework that generates 
-              high-fidelity financial analysis from earnings call transcripts. This work, accepted at the EMNLP Workshop 2025, 
-              demonstrates how structured adversarial debate can significantly outperform single-agent and cooperative baselines.
+              My recent work on Structured Adversarial Synthesis (SAS) introduces a novel multi-agent framework for 
+              generating financial analysis from earnings call transcripts. This research, accepted at the EMNLP Workshop 2025, 
+              demonstrates how structured adversarial debate mechanisms can enhance the quality of AI-generated analysis 
+              compared to single-agent and cooperative approaches.
             </p>
             <p>
-              My passion lies in solving complex problems at the frontier of AI—whether it's building multi-agent systems for 
-              financial analysis, creating hybrid summarization frameworks, or developing RAG architectures that handle knowledge 
-              conflicts. I bridge the gap between cutting-edge research and high-impact real-world applications.
+              My research interests lie in advancing the capabilities of language models through multi-agent architectures, 
+              retrieval-augmented generation, and hybrid summarization approaches. I aim to develop systems that bridge 
+              theoretical rigor with practical applicability in real-world domains.
             </p>
           </div>
 
           <div>
-            <h3 className="text-2xl font-bold mb-8 text-foreground">Technical Skills</h3>
-            <div className="grid md:grid-cols-2 gap-8">
+            <h3 className="text-xl font-bold mb-6 text-foreground">Technical Expertise</h3>
+            <div className="space-y-6">
               {Object.entries(skills).map(([category, items]) => (
-                <div key={category} className="space-y-4">
-                  <h4 className="text-lg font-semibold text-primary">{category}</h4>
+                <div key={category}>
+                  <h4 className="text-sm font-semibold text-primary mb-3 uppercase tracking-wide">{category}</h4>
                   <div className="flex flex-wrap gap-2">
                     {items.map((skill) => (
                       <span
                         key={skill}
-                        className="px-3 py-1 bg-card border border-border rounded-full text-sm text-foreground hover:border-primary/50 transition-colors"
+                        className="px-3 py-1.5 bg-background border border-border rounded text-sm text-foreground"
                       >
                         {skill}
                       </span>

@@ -7,10 +7,11 @@ const Experience = () => {
       organization: "BDS Lab, IISER Bhopal",
       location: "Bhopal, India",
       period: "May 2025 - Present",
-      supervisors: "PI - Dr. Tanmoy Basu | Co-PI - Dr. Biswajit Patra",
+      supervisors: "PI: Dr. Tanmoy Basu | Co-PI: Dr. Biswajit Patra",
       highlights: [
-        "Developed Structured Adversarial Synthesis (SAS), a novel hierarchical multi-agent framework for financial analysis",
-        "Engineered a parallelized intelligence-gathering phase where specialist agents ground analysis in verifiable market data"
+        "Conducting research on overcoming imperfect retrieval augmentation and knowledge conflicts in RAG frameworks",
+        "Developing methods to handle contradictory information in retrieved contexts",
+        "Investigating advanced retrieval strategies for improved system reliability"
       ]
     },
     {
@@ -18,11 +19,11 @@ const Experience = () => {
       organization: "BDS Lab, IISER Bhopal",
       location: "Bhopal, India",
       period: "Jan 2025 - Apr 2025",
-      supervisors: "PI - Dr. Tanmoy Basu | Co-PI - Dr. Biswajit Patra",
+      supervisors: "PI: Dr. Tanmoy Basu | Co-PI: Dr. Biswajit Patra",
       highlights: [
-        "Developed NLP-based news-sentiment framework to quantify Interest Rate Risk",
-        "Implemented hybrid text summarization framework integrating BiLSTM and transformer-based abstraction",
-        "Curated open-source financial news dataset tailored to Indian markets"
+        "Developed novel hybrid text summarization framework integrating BiLSTM and transformer-based abstraction",
+        "Applied reinforcement learning for model fine-tuning on financial news analysis",
+        "Curated domain-specific dataset for interest rate risk assessment in Indian markets"
       ]
     },
     {
@@ -30,11 +31,11 @@ const Experience = () => {
       organization: "School of Public Policy, IIT Delhi",
       location: "New Delhi, India",
       period: "May 2024 - July 2024",
-      supervisors: "Guide - Dr. Nandana Sengupta, Dr. Ravinder Kaur and Dr. Sangeeta Kohli",
+      supervisors: "Supervisors: Dr. Nandana Sengupta, Dr. Ravinder Kaur, Dr. Sangeeta Kohli",
       highlights: [
-        "Analyzed 2000+ IIT faculty profiles through IRINS data, identifying key publication and career patterns",
-        "Discovered 12% differential in negative marking impact between genders in high-stakes examinations",
-        "Researched the viability and impact of the 20% supernumerary quota for women at IITs"
+        "Analyzed faculty profiles and publication patterns using IRINS data",
+        "Investigated gender differentials in high-stakes examination performance",
+        "Researched viability of supernumerary quota policies in technical education"
       ]
     },
     {
@@ -42,55 +43,55 @@ const Experience = () => {
       organization: "I-Lab, IISER Bhopal",
       location: "Bhopal, India",
       period: "May 2023 - July 2023",
-      supervisors: "Guide - Dr. Mitradip Bhattacharjee (Senior Member, IEEE)",
+      supervisors: "Supervisor: Dr. Mitradip Bhattacharjee (Senior Member, IEEE)",
       highlights: [
-        "Worked on PDMS/PEDOT:PSS-based pressure sensors using SLA 3D-printed molds",
-        "Created multiple sensor prototypes through iterative design"
+        "Developed PDMS/PEDOT:PSS-based pressure sensors using 3D-printed molds",
+        "Conducted iterative design optimization for sensor prototypes"
       ]
     }
   ];
 
   return (
-    <section id="experience" className="py-20 bg-card/30">
+    <section id="experience" className="py-20 bg-background border-t border-border">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
-              Experience
-            </span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-10 text-foreground">
+            Research Experience
           </h2>
 
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-0 md:left-8 top-0 bottom-0 w-0.5 bg-border" />
+            <div className="absolute left-0 md:left-6 top-0 bottom-0 w-0.5 bg-border" />
 
-            <div className="space-y-12">
+            <div className="space-y-10">
               {experiences.map((exp, index) => (
-                <div key={index} className="relative pl-8 md:pl-20">
+                <div key={index} className="relative pl-8 md:pl-16">
                   {/* Timeline dot */}
-                  <div className="absolute left-0 md:left-6 top-2 w-5 h-5 rounded-full bg-primary border-4 border-background" />
+                  <div className="absolute left-0 md:left-4 top-2 w-4 h-4 rounded-full bg-primary border-2 border-background" />
 
-                  <div className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-all">
-                    <div className="flex items-start justify-between mb-3 flex-wrap gap-2">
-                      <div>
-                        <h3 className="text-xl font-bold text-foreground">{exp.title}</h3>
-                        <div className="flex items-center gap-2 text-primary font-semibold mt-1">
-                          <Briefcase className="h-4 w-4" />
-                          <span>{exp.organization}</span>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-2 text-muted-foreground text-sm">
-                        <Calendar className="h-4 w-4" />
-                        <span>{exp.period}</span>
+                  <div className="bg-card border border-border rounded-md p-6">
+                    <div className="mb-3">
+                      <h3 className="text-lg font-bold text-foreground">{exp.title}</h3>
+                      <div className="flex items-center gap-2 text-primary font-semibold mt-1 text-sm">
+                        <Briefcase className="h-3.5 w-3.5" />
+                        <span>{exp.organization}</span>
                       </div>
                     </div>
 
-                    <p className="text-sm text-muted-foreground mb-3">{exp.location}</p>
-                    <p className="text-sm text-primary/80 mb-4 font-mono">{exp.supervisors}</p>
+                    <div className="flex items-center gap-4 text-xs text-muted-foreground mb-3">
+                      <div className="flex items-center gap-1.5">
+                        <Calendar className="h-3.5 w-3.5" />
+                        <span>{exp.period}</span>
+                      </div>
+                      <span>•</span>
+                      <span>{exp.location}</span>
+                    </div>
+
+                    <p className="text-xs text-primary/80 mb-4 font-mono">{exp.supervisors}</p>
 
                     <ul className="space-y-2">
                       {exp.highlights.map((highlight, i) => (
-                        <li key={i} className="flex items-start text-foreground/90">
+                        <li key={i} className="flex items-start text-sm text-foreground/80 leading-relaxed">
                           <span className="text-primary mr-2">•</span>
                           <span>{highlight}</span>
                         </li>

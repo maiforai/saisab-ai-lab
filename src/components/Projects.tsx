@@ -5,11 +5,11 @@ const Projects = () => {
   const projects = [
     {
       title: "Structured Adversarial Synthesis (SAS)",
-      description: "A novel hierarchical multi-agent framework for generating nuanced and persuasive financial analysis from earnings call transcripts.",
+      description: "A hierarchical multi-agent framework implementing a deterministic five-act adversarial debate mechanism for generating financial analysis from earnings call transcripts.",
       outcomes: [
-        "Outperformed single-agent and cooperative baselines in rigorous ablation studies",
-        "Engineered parallelized intelligence-gathering phase with specialist agents",
-        "Achieved top performance in FinNLP-Earnings2Insights Shared Task at EMNLP 2025"
+        "Demonstrated superiority over single-agent and cooperative baselines through ablation studies",
+        "Implemented parallelized intelligence-gathering with specialized agent roles",
+        "Achieved top performance in human evaluation metrics at FinNLP-Earnings2Insights"
       ],
       techStack: ["Python", "LangChain", "AutoGen", "PyTorch", "Hugging Face", "Multi-Agent Systems"],
       github: "https://github.com/saisab21",
@@ -17,44 +17,44 @@ const Projects = () => {
     },
     {
       title: "RAG Framework with Knowledge Conflict Resolution",
-      description: "MS thesis project focused on overcoming imperfect retrieval augmentation and knowledge conflicts in RAG frameworks.",
+      description: "Research on addressing imperfect retrieval augmentation and conflicting information in retrieval-augmented generation systems.",
       outcomes: [
-        "Developing novel approaches to handle conflicting information in retrieved contexts",
-        "Implementing advanced retrieval strategies for improved accuracy",
-        "Creating benchmarks for evaluating RAG system robustness"
+        "Developing methods to handle contradictory information in retrieved contexts",
+        "Implementing advanced retrieval strategies for improved system reliability",
+        "Creating evaluation benchmarks for RAG system robustness"
       ],
       techStack: ["Python", "LangChain", "LlamaIndex", "FAISS", "Sentence Transformers", "PyTorch"],
       github: "https://github.com/saisab21"
     },
     {
       title: "Hybrid Summarization Framework for Financial News",
-      description: "Novel hybrid text summarization framework integrating BiLSTM and transformer-based abstraction for interest rate risk prediction.",
+      description: "A novel framework integrating BiLSTM and transformer-based approaches for text summarization, applied to interest rate risk prediction in financial markets.",
       outcomes: [
-        "Integrated BiLSTM for sequential information extraction",
-        "Fine-tuned transformers with reinforcement learning",
-        "Curated open-source financial news dataset for Indian markets"
+        "Combined sequential information extraction with transformer abstraction",
+        "Applied reinforcement learning for model fine-tuning",
+        "Curated domain-specific dataset for Indian financial markets"
       ],
       techStack: ["Python", "PyTorch", "Transformers", "BiLSTM", "NLP", "Financial Analysis"],
       github: "https://github.com/saisab21"
     },
     {
       title: "Credit Risk Management Analysis",
-      description: "Statistical modeling of Indian public sector banks to examine correlations between credit policies and profitability metrics.",
+      description: "Statistical analysis of credit policies and profitability correlations in Indian public sector banks using econometric modeling.",
       outcomes: [
-        "Analyzed credit-to-deposit ratios using historical CMIE portal data",
-        "Developed visualizations demonstrating key risk correlations",
-        "Applied advanced statistical modeling techniques"
+        "Analyzed credit-to-deposit ratios using CMIE historical data",
+        "Identified key correlations between risk management and profitability",
+        "Applied statistical modeling techniques for financial analysis"
       ],
       techStack: ["R", "Python", "Scikit-learn", "Statistical Modeling", "Data Visualization"],
       github: "https://github.com/saisab21"
     },
     {
-      title: "PAWAMAAN - Smart Air Quality Monitoring System",
-      description: "Campus-wide IoT air quality monitoring platform with optimized edge processing and centralized data management.",
+      title: "PAWAMAAN - Smart Air Quality Monitoring",
+      description: "IoT-based air quality monitoring platform with edge computing capabilities for campus-wide environmental sensing.",
       outcomes: [
-        "Optimized platform performance by replacing Arduino with ESP32C",
-        "Integrated edge processing with Raspberry Pi nodes",
-        "Implemented centralized data management system"
+        "Optimized system performance through ESP32C microcontroller implementation",
+        "Integrated edge processing using Raspberry Pi nodes",
+        "Developed centralized data management architecture"
       ],
       techStack: ["ESP32C", "Raspberry Pi", "IoT", "Python", "Edge Computing"],
       github: "https://github.com/saisab21"
@@ -62,34 +62,32 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-background">
+    <section id="projects" className="py-20 bg-background border-t border-border">
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
-              Featured Projects
-            </span>
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-10 text-foreground">
+            Research Projects
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="space-y-8">
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-all group"
+                className="border border-border rounded-md p-6 bg-card"
               >
-                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                <h3 className="text-xl font-bold text-foreground mb-3">
                   {project.title}
                 </h3>
                 
-                <p className="text-muted-foreground mb-4">
+                <p className="text-foreground/80 mb-4 leading-relaxed">
                   {project.description}
                 </p>
 
                 <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-primary mb-2">Key Outcomes:</h4>
-                  <ul className="space-y-1 text-sm text-foreground/80">
+                  <h4 className="text-sm font-semibold text-primary mb-2 uppercase tracking-wide">Key Contributions</h4>
+                  <ul className="space-y-1.5 text-sm text-foreground/75">
                     {project.outcomes.map((outcome, i) => (
-                      <li key={i} className="flex items-start">
+                      <li key={i} className="flex items-start leading-relaxed">
                         <span className="text-primary mr-2">•</span>
                         <span>{outcome}</span>
                       </li>
@@ -97,13 +95,13 @@ const Projects = () => {
                   </ul>
                 </div>
 
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-primary mb-2">Tech Stack:</h4>
+                <div className="mb-5">
+                  <h4 className="text-sm font-semibold text-primary mb-2 uppercase tracking-wide">Technologies</h4>
                   <div className="flex flex-wrap gap-2">
                     {project.techStack.map((tech, i) => (
                       <span
                         key={i}
-                        className="px-2 py-1 bg-secondary text-secondary-foreground rounded text-xs font-mono"
+                        className="px-2.5 py-1 bg-secondary text-secondary-foreground rounded text-xs font-mono"
                       >
                         {tech}
                       </span>
@@ -115,24 +113,22 @@ const Projects = () => {
                   <Button 
                     variant="outline" 
                     size="sm"
-                    className="border-primary/50 hover:bg-primary/10"
                     asChild
                   >
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <Github className="mr-2 h-4 w-4" />
-                      GitHub
+                      <Github className="mr-2 h-3.5 w-3.5" />
+                      Repository
                     </a>
                   </Button>
                   {project.paper && (
                     <Button 
                       variant="outline" 
                       size="sm"
-                      className="border-primary/50 hover:bg-primary/10"
                       asChild
                     >
                       <a href={project.paper} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="mr-2 h-4 w-4" />
-                        Paper
+                        <ExternalLink className="mr-2 h-3.5 w-3.5" />
+                        Publication
                       </a>
                     </Button>
                   )}

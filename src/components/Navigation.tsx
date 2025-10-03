@@ -36,7 +36,7 @@ const Navigation = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/95 backdrop-blur-md border-b border-border shadow-lg" : "bg-transparent"
+        isScrolled ? "bg-background/98 backdrop-blur-sm border-b border-border shadow-sm" : "bg-background/95"
       }`}
     >
       <div className="container mx-auto px-6 py-4">
@@ -44,18 +44,18 @@ const Navigation = () => {
           {/* Logo */}
           <button
             onClick={() => scrollToSection("home")}
-            className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent hover:opacity-80 transition-opacity"
+            className="text-lg font-bold text-foreground hover:text-primary transition-colors"
           >
             Saisab Sadhu
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-7">
             {navLinks.map((link) => (
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="text-foreground/80 hover:text-primary transition-colors font-medium"
+                className="text-sm text-foreground/70 hover:text-foreground transition-colors"
               >
                 {link.label}
               </button>
@@ -69,18 +69,18 @@ const Navigation = () => {
             className="md:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
         </div>
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-4 animate-fade-in">
+          <div className="md:hidden mt-4 pb-4 space-y-3">
             {navLinks.map((link) => (
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="block w-full text-left text-foreground/80 hover:text-primary transition-colors font-medium py-2"
+                className="block w-full text-left text-foreground/70 hover:text-foreground transition-colors py-2"
               >
                 {link.label}
               </button>
