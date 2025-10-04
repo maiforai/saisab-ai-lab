@@ -61,19 +61,32 @@ const Contact = () => {
           </div>
 
           {/* CV Download */}
-          <div className="bg-muted/50 border border-border rounded-md p-8 text-center">
-            <h3 className="text-lg font-semibold text-foreground mb-3">Curriculum Vitae</h3>
-            <p className="text-sm text-muted-foreground mb-5">
-              Download my complete CV for detailed information about my research, publications, and experience.
+          <div className="bg-muted/50 border border-border rounded-lg p-8 text-center">
+            <h3 className="text-xl font-semibold text-foreground mb-3">Curriculum Vitae</h3>
+            <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
+              Download my CV for detailed information about my research, publications, and experience.
             </p>
-            <Button 
-              asChild
-            >
-              <a href="/Saisab_Sadhu_CV.pdf" download>
-                <Download className="mr-2 h-4 w-4" />
-                Download CV
-              </a>
-            </Button>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Button 
+                asChild
+                className="shadow-md hover:shadow-lg transition-all"
+              >
+                <a href="/Saisab_Sadhu_CV_Short.pdf" download>
+                  <Download className="mr-2 h-4 w-4" />
+                  Short CV
+                </a>
+              </Button>
+              <Button 
+                asChild
+                variant="outline"
+                className="hover:shadow-md transition-all"
+              >
+                <a href="/Saisab_Sadhu_CV_Full.pdf" download>
+                  <Download className="mr-2 h-4 w-4" />
+                  Full CV
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
