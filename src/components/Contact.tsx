@@ -17,7 +17,7 @@ const Contact = () => {
 
           {/* Contact Information */}
           <div className="grid md:grid-cols-2 gap-5 mb-10">
-            <div className="bg-card border border-border rounded-md p-5">
+            <div className="bg-card border border-border rounded-md p-5 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1">
               <Mail className="h-5 w-5 text-primary mb-3" />
               <h3 className="font-semibold text-foreground mb-1 text-sm">Primary Email</h3>
               <a href="mailto:saisab21@iiserb.ac.in" className="text-sm text-muted-foreground hover:text-primary">
@@ -25,7 +25,7 @@ const Contact = () => {
               </a>
             </div>
 
-            <div className="bg-card border border-border rounded-md p-5">
+            <div className="bg-card border border-border rounded-md p-5 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1">
               <Mail className="h-5 w-5 text-primary mb-3" />
               <h3 className="font-semibold text-foreground mb-1 text-sm">Secondary Email</h3>
               <a href="mailto:sadhusaisab@gmail.com" className="text-sm text-muted-foreground hover:text-primary">
@@ -33,7 +33,7 @@ const Contact = () => {
               </a>
             </div>
 
-            <div className="bg-card border border-border rounded-md p-5">
+            <div className="bg-card border border-border rounded-md p-5 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1">
               <Github className="h-5 w-5 text-primary mb-3" />
               <h3 className="font-semibold text-foreground mb-1 text-sm">GitHub</h3>
               <a 
@@ -46,7 +46,7 @@ const Contact = () => {
               </a>
             </div>
 
-            <div className="bg-card border border-border rounded-md p-5">
+            <div className="bg-card border border-border rounded-md p-5 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1">
               <Linkedin className="h-5 w-5 text-primary mb-3" />
               <h3 className="font-semibold text-foreground mb-1 text-sm">LinkedIn</h3>
               <a 

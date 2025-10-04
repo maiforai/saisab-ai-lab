@@ -69,7 +69,7 @@ const Experience = () => {
                   {/* Timeline dot */}
                   <div className="absolute left-0 md:left-4 top-2 w-4 h-4 rounded-full bg-primary border-2 border-background" />
 
-                  <div className="bg-card border border-border rounded-md p-6">
+                  <div className="bg-card border border-border rounded-md p-6 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1">
                     <div className="mb-3">
                       <h3 className="text-lg font-bold text-foreground">{exp.title}</h3>
                       <div className="flex items-center gap-2 text-primary font-semibold mt-1 text-sm">

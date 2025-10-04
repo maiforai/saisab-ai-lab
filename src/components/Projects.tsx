@@ -73,7 +73,7 @@ const Projects = () => {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="border border-border rounded-md p-6 bg-card"
+                className="border border-border rounded-md p-6 bg-card hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1"
               >
                 <h3 className="text-xl font-bold text-foreground mb-3">
                   {project.title}
@@ -101,7 +101,7 @@ const Projects = () => {
                     {project.techStack.map((tech, i) => (
                       <span
                         key={i}
-                        className="px-2.5 py-1 bg-secondary text-secondary-foreground rounded text-xs font-mono"
+                        className="px-2.5 py-1 bg-secondary text-secondary-foreground rounded text-xs font-mono hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 cursor-default"
                       >
                         {tech}
                       </span>

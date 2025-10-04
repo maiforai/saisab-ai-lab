@@ -12,7 +12,7 @@ const Achievements = () => {
 
           <div className="space-y-6">
             {/* Top achievement */}
-            <div className="border-l-4 border-primary bg-card border border-border rounded-md p-6">
+            <div className="border-l-4 border-primary bg-card border border-border rounded-md p-6 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1">
               <div className="mb-4">
                 <h3 className="text-xl font-bold text-foreground mb-2">
                   FinNLP-Earnings2Insights Shared Task
@@ -56,7 +56,7 @@ const Achievements = () => {
             <div>
               <h3 className="text-lg font-semibold text-foreground mb-4">Academic Programs</h3>
               <div className="space-y-4">
-                <div className="bg-card border border-border rounded-md p-5">
+                <div className="bg-card border border-border rounded-md p-5 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1">
                   <h4 className="font-semibold text-foreground mb-1">
                     Climate Change AI Summer School
                   </h4>
@@ -73,7 +73,7 @@ const Achievements = () => {
                   </ul>
                 </div>
 
-                <div className="bg-card border border-border rounded-md p-5">
+                <div className="bg-card border border-border rounded-md p-5 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1">
                   <h4 className="font-semibold text-foreground mb-1">
                     7th Summer School on AI
                   </h4>

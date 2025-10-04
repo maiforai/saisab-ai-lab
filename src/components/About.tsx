@@ -52,7 +52,7 @@ const About = () => {
                     {items.map((skill) => (
                       <span
                         key={skill}
-                        className="px-3 py-1.5 bg-background border border-border rounded text-sm text-foreground"
+                        className="px-3 py-1.5 bg-background border border-border rounded text-sm text-foreground hover:shadow-md hover:shadow-primary/5 hover:-translate-y-0.5 transition-all duration-300 cursor-default"
                       >
                         {skill}
                       </span>

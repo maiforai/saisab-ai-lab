@@ -11,7 +11,7 @@ const Publications = () => {
           </h2>
 
           <div className="space-y-8">
-            <div className="border-l-4 border-primary pl-6 py-2">
+            <div className="border-l-4 border-primary pl-6 py-2 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 rounded-r-lg hover:bg-card/50 pr-6">
               <div className="mb-4">
                 <div className="inline-block px-2 py-1 bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wide rounded mb-3">
                   Accepted
