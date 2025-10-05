@@ -18,60 +18,55 @@ const AnimatedBackground = () => {
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
-    // Neural network nodes
-    const nodes: { x: number; y: number; vx: number; vy: number; connections: number[] }[] = [];
-    const nodeCount = 30;
+    // Flowing text particles representing NLP processing
+    const particles: { x: number; y: number; speed: number; char: string; opacity: number; size: number }[] = [];
+    const chars = "01ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    const particleCount = 25;
 
-    for (let i = 0; i < nodeCount; i++) {
-      nodes.push({
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        connections: [],
+        speed: 0.15 + Math.random() * 0.25,
+        char: chars[Math.floor(Math.random() * chars.length)],
+        opacity: 0.1 + Math.random() * 0.15,
+        size: 12 + Math.random() * 8,
       });
     }
 
+    let time = 0;
+
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      time += 0.005;
 
-      // Update and draw nodes
-      nodes.forEach((node, i) => {
-        node.x += node.vx;
-        node.y += node.vy;
+      const isDark = document.documentElement.classList.contains('dark');
 
-        // Bounce off edges
-        if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
-        if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
+      particles.forEach((particle) => {
+        // Gentle vertical flow with subtle horizontal wave
+        particle.y -= particle.speed;
+        particle.x += Math.sin(time + particle.y * 0.01) * 0.3;
 
-        // Draw connections
-        nodes.forEach((otherNode, j) => {
-          if (i === j) return;
-          const dx = node.x - otherNode.x;
-          const dy = node.y - otherNode.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
+        // Reset particle when it goes off screen
+        if (particle.y < -20) {
+          particle.y = canvas.height + 20;
+          particle.x = Math.random() * canvas.width;
+          particle.char = chars[Math.floor(Math.random() * chars.length)];
+        }
 
-          if (distance < 150) {
-            ctx.beginPath();
-            ctx.moveTo(node.x, node.y);
-            ctx.lineTo(otherNode.x, otherNode.y);
-            // More visible in both light and dark modes
-            const isDark = document.documentElement.classList.contains('dark');
-            const baseOpacity = isDark ? 0.25 : 0.35;
-            ctx.strokeStyle = isDark 
-              ? `rgba(135, 175, 205, ${baseOpacity * (1 - distance / 150)})`
-              : `rgba(34, 70, 94, ${baseOpacity * (1 - distance / 150)})`;
-            ctx.lineWidth = 1;
-            ctx.stroke();
-          }
-        });
-
-        // Draw node
-        ctx.beginPath();
-        ctx.arc(node.x, node.y, 2.5, 0, Math.PI * 2);
-        const isDark = document.documentElement.classList.contains('dark');
-        ctx.fillStyle = isDark ? "rgba(135, 175, 205, 0.5)" : "rgba(34, 70, 94, 0.5)";
-        ctx.fill();
+        // Draw character with subtle glow
+        ctx.save();
+        ctx.globalAlpha = particle.opacity;
+        ctx.font = `${particle.size}px "JetBrains Mono", monospace`;
+        ctx.fillStyle = isDark ? "rgba(135, 175, 205, 0.4)" : "rgba(34, 70, 94, 0.35)";
+        ctx.fillText(particle.char, particle.x, particle.y);
+        
+        // Very subtle glow effect
+        ctx.globalAlpha = particle.opacity * 0.3;
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = isDark ? "rgba(135, 175, 205, 0.3)" : "rgba(34, 70, 94, 0.25)";
+        ctx.fillText(particle.char, particle.x, particle.y);
+        ctx.restore();
       });
 
       requestAnimationFrame(animate);
@@ -87,7 +82,7 @@ const AnimatedBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full pointer-events-none opacity-70 dark:opacity-60"
+      className="absolute inset-0 w-full h-full pointer-events-none opacity-60 dark:opacity-50"
     />
   );
 };

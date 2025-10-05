@@ -111,6 +111,13 @@ All colors MUST be HSL.
   /* Smooth scroll behavior */
   html {
     scroll-behavior: smooth;
+    font-size: 16px;
+  }
+  
+  @media (min-width: 1920px) {
+    html {
+      font-size: 18px;
+    }
   }
 
   /* Enhanced link hover effects */
