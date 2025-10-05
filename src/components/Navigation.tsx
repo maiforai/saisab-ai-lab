@@ -29,8 +29,8 @@ const Navigation = () => {
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
     { id: "publications", label: "Publications" },
-    { id: "projects", label: "Projects" },
     { id: "experience", label: "Experience" },
+    { id: "projects", label: "Projects" },
     { id: "achievements", label: "Achievements" },
     { id: "contact", label: "Contact" },
   ];
@@ -50,7 +50,7 @@ const Navigation = () => {
             onClick={() => scrollToSection("home")}
             className="text-xl font-bold text-foreground hover:text-primary transition-all duration-300 hover:scale-105"
           >
-            SS
+            Saisab Sadhu
           </button>
 
           {/* Desktop Navigation */}

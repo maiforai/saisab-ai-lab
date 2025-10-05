@@ -1,4 +1,4 @@
-import { ArrowRight, Github, Linkedin, Mail, Download } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, Download, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedBackground from "./AnimatedBackground";
 
@@ -125,6 +125,15 @@ const Hero = () => {
               aria-label="LinkedIn Profile"
             >
               <Linkedin className="h-5 w-5" />
+            </a>
+            <a 
+              href="#"
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-foreground/60 hover:text-primary transition-colors"
+              aria-label="Google Scholar Profile"
+            >
+              <GraduationCap className="h-5 w-5" />
             </a>
             <a 
               href="mailto:saisab21@iiserb.ac.in"

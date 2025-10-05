@@ -55,16 +55,22 @@ const AnimatedBackground = () => {
             ctx.beginPath();
             ctx.moveTo(node.x, node.y);
             ctx.lineTo(otherNode.x, otherNode.y);
-            ctx.strokeStyle = `rgba(34, 70, 94, ${0.15 * (1 - distance / 150)})`;
-            ctx.lineWidth = 0.5;
+            // More visible in both light and dark modes
+            const isDark = document.documentElement.classList.contains('dark');
+            const baseOpacity = isDark ? 0.25 : 0.35;
+            ctx.strokeStyle = isDark 
+              ? `rgba(135, 175, 205, ${baseOpacity * (1 - distance / 150)})`
+              : `rgba(34, 70, 94, ${baseOpacity * (1 - distance / 150)})`;
+            ctx.lineWidth = 1;
             ctx.stroke();
           }
         });
 
         // Draw node
         ctx.beginPath();
-        ctx.arc(node.x, node.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(34, 70, 94, 0.3)";
+        ctx.arc(node.x, node.y, 2.5, 0, Math.PI * 2);
+        const isDark = document.documentElement.classList.contains('dark');
+        ctx.fillStyle = isDark ? "rgba(135, 175, 205, 0.5)" : "rgba(34, 70, 94, 0.5)";
         ctx.fill();
       });
 
@@ -81,8 +87,7 @@ const AnimatedBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full pointer-events-none opacity-40"
-      style={{ mixBlendMode: "multiply" }}
+      className="absolute inset-0 w-full h-full pointer-events-none opacity-70 dark:opacity-60"
     />
   );
 };

@@ -3,33 +3,27 @@ import { Award, Users, Calendar } from "lucide-react";
 const PositionsOfResponsibility = () => {
   const positions = [
     {
-      title: "Research Assistant",
+      title: "Secretary, Student Development Council",
       organization: "IISER Bhopal",
-      period: "2023 - Present",
+      period: "Oct 2023 - Aug 2024",
       responsibilities: [
-        "Leading research initiatives in Natural Language Processing and Large Language Models",
-        "Mentoring junior researchers in machine learning techniques",
-        "Contributing to publications and academic presentations"
+        "Organized institute-wide initiatives, workshops, and panel discussions to promote student growth"
       ]
     },
     {
-      title: "Teaching Assistant",
+      title: "Founder and Lead, Entrepreneurship Cell",
       organization: "IISER Bhopal",
-      period: "2023 - 2024",
+      period: "Dec 2023 - Aug 2024",
       responsibilities: [
-        "Assisted in teaching Data Science and Machine Learning courses",
-        "Conducted tutorial sessions and lab demonstrations",
-        "Evaluated student assignments and projects"
+        "Fostered a startup culture by hosting networking sessions and speaker events for aspiring entrepreneurs"
       ]
     },
     {
-      title: "Student Coordinator",
-      organization: "Department of Data Science",
-      period: "2022 - 2023",
+      title: "Institute Placement Coordinator",
+      organization: "Center for Career Development, IISER Bhopal",
+      period: "Aug 2022 - Oct 2023",
       responsibilities: [
-        "Organized departmental events and workshops",
-        "Coordinated between students and faculty",
-        "Managed academic and extracurricular activities"
+        "Coordinated campus placements and industry outreach; achieved a notable increase in recruiter engagement"
       ]
     }
   ];
