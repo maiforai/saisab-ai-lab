@@ -1,8 +1,29 @@
 import { ArrowRight, Github, Linkedin, Mail, Download, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedBackground from "./AnimatedBackground";
+import { useState, useEffect } from "react";
 
 const Hero = () => {
+  const [achievementIndex, setAchievementIndex] = useState(0);
+
+  const achievements = [
+    {
+      title: "#1 Win Rate vs Analyst Report",
+      description: "FinNLP Shared Task @ EMNLP 2025 | Overall 5th Rank Globally"
+    },
+    {
+      title: "Student Innovation Grant (Rs. 2 Lakhs)",
+      description: "AI Fintech Platform Development | DST, GOI Funded"
+    }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAchievementIndex((prev) => (prev + 1) % achievements.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [achievements.length]);
+
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -44,7 +65,7 @@ const Hero = () => {
                 Indian Institute of Science Education and Research, Bhopal
               </p>
               <p className="text-base md:text-lg text-muted-foreground max-w-2xl leading-relaxed">
-                Specializing in Large Language Models, Multi-Agent Systems, and Retrieval-Augmented Generation
+                Research Areas: Multi-Agent Systems, Overcoming Imperfect Retrieval & Knowledge Conflict in RAG, and LLM Explainability
               </p>
             </div>
           </div>
@@ -52,14 +73,27 @@ const Hero = () => {
           {/* Key achievements */}
           <div className="grid md:grid-cols-2 gap-6 mb-12">
             <div className="bg-card border border-border rounded-lg p-6 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 cursor-pointer">
-              <div className="text-xs font-semibold text-primary uppercase tracking-wider mb-2">Publication</div>
-              <div className="text-lg text-foreground font-semibold mb-1">EMNLP Workshop 2025</div>
-              <div className="text-sm text-muted-foreground leading-relaxed">Structured Adversarial Synthesis for Financial Analysis</div>
+              <div className="text-xs font-semibold text-primary uppercase tracking-wider mb-2">Recent Publication</div>
+              <div className="text-lg text-foreground font-semibold mb-1">ECIR 2026</div>
+              <div className="text-sm text-muted-foreground leading-relaxed">DARE: Dialectical Alignment for Retrieval-Enhanced LLMs</div>
             </div>
-            <div className="bg-card border border-border rounded-lg p-6 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+            <div className="bg-card border border-border rounded-lg p-6 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 cursor-pointer overflow-hidden">
               <div className="text-xs font-semibold text-primary uppercase tracking-wider mb-2">Achievement</div>
-              <div className="text-lg text-foreground font-semibold mb-1">#1 Rank - FinNLP Shared Task</div>
-              <div className="text-sm text-muted-foreground leading-relaxed">Win Rate vs Analyst Report Metric</div>
+              <div className="relative h-[52px]">
+                {achievements.map((achievement, index) => (
+                  <div
+                    key={index}
+                    className={`absolute inset-0 transition-all duration-500 ${
+                      index === achievementIndex 
+                        ? 'opacity-100 translate-y-0' 
+                        : 'opacity-0 translate-y-4'
+                    }`}
+                  >
+                    <div className="text-lg text-foreground font-semibold mb-1">{achievement.title}</div>
+                    <div className="text-sm text-muted-foreground leading-relaxed">{achievement.description}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
