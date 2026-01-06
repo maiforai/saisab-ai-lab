@@ -14,6 +14,10 @@ const Hero = () => {
     {
       title: "Student Innovation Grant (Rs. 2 Lakhs)",
       description: "AI Fintech Platform Development | DST, GOI Funded"
+    },
+    {
+      title: "AAAI 2026 EGSAI Selection",
+      description: "Presenting Multi-Agent Adversarial Framework for AI Tutoring"
     }
   ];
 
