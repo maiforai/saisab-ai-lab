@@ -1,9 +1,9 @@
 const About = () => {
   const skills = {
-    "Languages": ["Python (PyTorch, TensorFlow, Scikit-learn)", "C", "R", "MATLAB", "LaTeX"],
+    "Languages": ["Python (PyTorch, TensorFlow, Scikit-learn, etc)", "C", "R", "MATLAB", "HTML", "Javascript"],
     "Deep Learning & NLP": ["Hugging Face (Transformers, PEFT)", "NLTK", "Gensim", "spaCy", "stanza"],
     "GenAI & Research": ["Multi-Agent Systems (AutoGen)", "DPO", "LoRA/QLoRA", "G-Eval"],
-    "Compute & Ops": ["NVIDIA GPUs (H100/A100)", "Weights & Biases", "Distributed Training"]
+    "Dev Tools": ["Bash", "Git", "VS Code", "Jupyter", "Docker", "SLURM", "Kubernetes"]
   };
 
   return (
