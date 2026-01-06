@@ -1,17 +1,9 @@
 const About = () => {
   const skills = {
-    "Programming & Scripting": ["Python", "R", "C++", "SQL", "LaTeX"],
-    "Machine Learning & AI": ["PyTorch", "TensorFlow", "Scikit-learn", "Pandas", "NumPy", "XGBoost", "LightGBM"],
-    "LLMs & Generative AI": [
-      "Hugging Face (transformers, PEFT)",
-      "RAG Frameworks",
-      "Fine-tuning (DPO, LoRA)",
-      "Prompt Engineering",
-      "LangChain",
-      "LlamaIndex",
-      "AutoGen"
-    ],
-    "Core NLP": ["Vector Databases (FAISS)", "NLTK", "spaCy", "Gensim", "Sentence Transformers"]
+    "Languages": ["Python (PyTorch, TensorFlow, Scikit-learn)", "C", "R", "MATLAB", "LaTeX"],
+    "Deep Learning & NLP": ["Hugging Face (Transformers, PEFT)", "NLTK", "Gensim", "spaCy", "stanza"],
+    "GenAI & Research": ["Multi-Agent Systems (AutoGen)", "DPO", "LoRA/QLoRA", "G-Eval"],
+    "Compute & Ops": ["NVIDIA GPUs (H100/A100)", "Weights & Biases", "Distributed Training"]
   };
 
   return (
@@ -25,20 +17,20 @@ const About = () => {
           <div className="space-y-5 text-base text-foreground/85 mb-14 leading-relaxed">
             <p>
               I am currently pursuing my MS in Data Science and Engineering at IISER Bhopal, where my research focuses on 
-              overcoming imperfect retrieval augmentation and knowledge conflicts in RAG frameworks. My work explores 
-              the intersection of theoretical foundations and practical implementations in natural language processing 
-              and large language models.
+              architecting dialectical AI systems—models that arrive at truth through adversarial debate. I believe that by 
+              externalizing the reasoning process into structured cross-examination between agents, we can achieve not only 
+              higher accuracy but also inherent explainability.
             </p>
             <p>
-              My recent work on Structured Adversarial Synthesis (SAS) introduces a novel multi-agent framework for 
-              generating financial analysis from earnings call transcripts. This research, accepted at the EMNLP Workshop 2025, 
-              demonstrates how structured adversarial debate mechanisms can enhance the quality of AI-generated analysis 
-              compared to single-agent and cooperative approaches.
+              My Master's thesis work on DARE (Dialectical Adversarial RAG Engine), accepted at ECIR 2026, introduces a 
+              "Devil's Advocate" agent to subject claims to rigorous scrutiny, demonstrating that dynamic adversarial 
+              credibility assessment could improve factual consistency by 77%. I further explored this intersection of 
+              performance and transparency in Structured Adversarial Synthesis (SAS), published at the EMNLP 2025 Workshop.
             </p>
             <p>
-              My research interests lie in advancing the capabilities of language models through multi-agent architectures, 
-              retrieval-augmented generation, and hybrid summarization approaches. I aim to develop systems that bridge 
-              theoretical rigor with practical applicability in real-world domains.
+              I am deeply committed to the societal implications of AI, as reflected in my research on gender differentials 
+              in STEM at IIT Delhi and my work on Legal NLP (accepted at IJCAI-AACL 2025). My research interests lie in 
+              advancing adversarial frameworks as a "safety and explainability layer" for foundational models.
             </p>
           </div>
 

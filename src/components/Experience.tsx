@@ -3,27 +3,14 @@ import { Briefcase, Calendar } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
-      title: "Graduate Researcher (MS Thesis)",
+      title: "Graduate & Undergraduate Researcher",
       organization: "BDS Lab, IISER Bhopal",
       location: "Bhopal, India",
-      period: "May 2025 - Present",
-      supervisors: "PI: Dr. Tanmoy Basu | Co-PI: Dr. Biswajit Patra",
+      period: "Jan 2025 - Present",
+      supervisors: "PI: Dr. Tanmay Basu | Co-PIs: Dr. Dwaipayan Roy, Dr. Biswajit Patra",
       highlights: [
-        "Conducting research on overcoming imperfect retrieval augmentation and knowledge conflicts in RAG frameworks",
-        "Developing methods to handle contradictory information in retrieved contexts",
-        "Investigating advanced retrieval strategies for improved system reliability"
-      ]
-    },
-    {
-      title: "Undergraduate Researcher (BS Thesis)",
-      organization: "BDS Lab, IISER Bhopal",
-      location: "Bhopal, India",
-      period: "Jan 2025 - Apr 2025",
-      supervisors: "PI: Dr. Tanmoy Basu | Co-PI: Dr. Biswajit Patra",
-      highlights: [
-        "Developed novel hybrid text summarization framework integrating BiLSTM and transformer-based abstraction",
-        "Applied reinforcement learning for model fine-tuning on financial news analysis",
-        "Curated domain-specific dataset for interest rate risk assessment in Indian markets"
+        "MS Thesis: Investigating mechanisms to overcome imperfect retrieval and resolve knowledge conflicts in RAG. Developed a dialectical engine built upon the structured adversarial framework; operationalizes formal cross-examination to dynamically assess source credibility based on logical resilience, achieving substantial gains over strong baselines.",
+        "BS Thesis: Engineered a hybrid extractive–abstractive summarization pipeline achieving strong performance (53.13 ROUGE-1) on CNN/DailyMail; developed a ModernBERT-based Siamese extractive stage using a scaled adaptive margin triplet loss for optimal candidate ranking."
       ]
     },
     {
@@ -31,11 +18,9 @@ const Experience = () => {
       organization: "School of Public Policy, IIT Delhi",
       location: "New Delhi, India",
       period: "May 2024 - July 2024",
-      supervisors: "Supervisors: Dr. Nandana Sengupta, Dr. Ravinder Kaur, Dr. Sangeeta Kohli",
+      supervisors: "Guide: Dr. Nandana Sengupta, Dr. Ravinder Kaur, Dr. Sangeeta Kohli",
       highlights: [
-        "Analyzed faculty profiles and publication patterns using IRINS data",
-        "Investigated gender differentials in high-stakes examination performance",
-        "Researched viability of supernumerary quota policies in technical education"
+        "Analyzed 2000+ faculty profiles (IRINS) to identify a 12% gender differential in negative marking impact; evaluated the socio-economic viability and impact of the 20% supernumerary quota for women at IITs."
       ]
     },
     {
@@ -43,10 +28,9 @@ const Experience = () => {
       organization: "I-Lab, IISER Bhopal",
       location: "Bhopal, India",
       period: "May 2023 - July 2023",
-      supervisors: "Supervisor: Dr. Mitradip Bhattacharjee (Senior Member, IEEE)",
+      supervisors: "Guide: Dr. Mitradip Bhattacharjee",
       highlights: [
-        "Developed PDMS/PEDOT:PSS-based pressure sensors using 3D-printed molds",
-        "Conducted iterative design optimization for sensor prototypes"
+        "Engineered PDMS/PEDOT:PSS pressure sensors using SLA 3D-printed molds; optimized sensor head geometry through iterative prototyping to achieve optimal pressure response."
       ]
     }
   ];

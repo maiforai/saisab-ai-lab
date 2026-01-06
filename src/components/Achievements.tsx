@@ -1,7 +1,59 @@
-import { Award } from "lucide-react";
+import { Award, Trophy, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Achievements = () => {
+  const achievements = [
+    {
+      title: "AAAI 2026 EGSAI Selection",
+      description: "Selected to present \"Hierarchical Pedagogical Oversight: A Multi-Agent Adversarial Framework for Reliable AI Tutoring\" at AAAI 2026; one of 51 works chosen from global submissions.",
+      icon: Trophy
+    },
+    {
+      title: "Top Performer, FinNLP @ EMNLP 2025",
+      description: "Ranked first globally on the official 'Win Rate vs Analyst Report' metric; system reports were preferred over professional human analysts.",
+      icon: Award,
+      link: "https://sites.google.com/nlg.csie.ntu.edu.tw/finnlp-2025-emnlp/shared-task-finnlp-2025-emnlp?authuser=0",
+      linkText: "Shared Task Details"
+    },
+    {
+      title: "Student Innovation Grant (Rs. 2 Lakhs)",
+      description: "Awarded by IICE (Funded by DST, GOI) to develop an AI fintech platform; demonstrated 68% profit increase in backtesting.",
+      icon: Award
+    },
+    {
+      title: "CARE Conference Travel Grant",
+      description: "Awarded full registration waiver and travel support (IIT Guwahati) for poster presentation at the Collaborative for Academic Research Excellence Conference.",
+      icon: GraduationCap
+    }
+  ];
+
+  const workshops = [
+    {
+      title: "FinNLP Workshop at EMNLP 2025",
+      location: "Virtual",
+      year: "2025",
+      description: "Virtually presented \"Structured Adversarial Synthesis\" and participated in shared task discussions at the 10th FinNLP Workshop."
+    },
+    {
+      title: "CARE Conference (Data Science & AI)",
+      location: "Guwahati, India",
+      year: "2025",
+      description: "Presented a poster on Multi-Agent Adversarial RAG at the First Mehta Family Foundation CARE Conference hosted by IIT Guwahati."
+    },
+    {
+      title: "Climate Change AI Summer School",
+      location: "Pittsburgh, USA",
+      year: "2024",
+      description: "Engaged with leading researchers on ML applications for climate science; participated in hands-on workshops on climate modeling."
+    },
+    {
+      title: "7th Summer School on AI (Focus on CV & ML)",
+      location: "Hyderabad, India",
+      year: "2024",
+      description: "Selected for an intensive program organized by the Centre for Visual Information Technology (CVIT) at IIIT Hyderabad."
+    }
+  ];
+
   return (
     <section id="achievements" className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
@@ -10,86 +62,58 @@ const Achievements = () => {
             Recognition & Achievements
           </h2>
 
-          <div className="space-y-6">
-            {/* Top achievement */}
-            <div className="border-l-4 border-primary bg-card border border-border rounded-md p-6 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1">
-              <div className="mb-4">
-                <h3 className="text-xl font-bold text-foreground mb-2">
-                  FinNLP-Earnings2Insights Shared Task
-                </h3>
-                <p className="text-sm text-primary font-semibold mb-4">EMNLP 2025</p>
-              </div>
-              
-              <div className="space-y-3 text-sm text-foreground/85 leading-relaxed mb-4">
-                <div className="flex items-start">
-                  <Award className="h-4 w-4 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                  <p>
-                    Ranked <strong>#1</strong> in the 'Win Rate vs Analyst Report' metric, where the system's 
-                    generated reports were preferred over professional human analyst reports in automated evaluation
-                  </p>
-                </div>
-                <div className="flex items-start">
-                  <Award className="h-4 w-4 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                  <p>
-                    Achieved <strong>5th place globally</strong> in human evaluation on the primary investment 
-                    accuracy metric among all participating systems
-                  </p>
-                </div>
-              </div>
-              
-              <Button 
-                variant="outline" 
-                size="sm"
-                asChild
+          <div className="space-y-6 mb-12">
+            {achievements.map((achievement, index) => (
+              <div 
+                key={index}
+                className="border-l-4 border-primary bg-card border border-border rounded-md p-6 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1"
               >
-                <a 
-                  href="https://sites.google.com/nlg.csie.ntu.edu.tw/finnlp-2025-emnlp/shared-task-finnlp-2025-emnlp?authuser=0"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Shared Task Details
-                </a>
-              </Button>
-            </div>
-
-            {/* Academic Programs */}
-            <div>
-              <h3 className="text-lg font-semibold text-foreground mb-4">Academic Programs</h3>
-              <div className="space-y-4">
-                <div className="bg-card border border-border rounded-md p-5 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1">
-                  <h4 className="font-semibold text-foreground mb-1">
-                    Climate Change AI Summer School
-                  </h4>
-                  <p className="text-xs text-muted-foreground mb-3">Pittsburgh, USA • 2024</p>
-                  <ul className="space-y-1.5 text-sm text-foreground/75">
-                    <li className="flex items-start">
-                      <span className="text-primary mr-2">•</span>
-                      <span>Participated in workshops on machine learning applications for climate science</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-primary mr-2">•</span>
-                      <span>Engaged with researchers on climate modeling and predictive analytics</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="bg-card border border-border rounded-md p-5 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1">
-                  <h4 className="font-semibold text-foreground mb-1">
-                    7th Summer School on AI
-                  </h4>
-                  <p className="text-xs text-muted-foreground mb-3">IIIT Hyderabad</p>
-                  <ul className="space-y-1.5 text-sm text-foreground/75">
-                    <li className="flex items-start">
-                      <span className="text-primary mr-2">•</span>
-                      <span>Selected for intensive program by Centre for Visual Information Technology (CVIT)</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-primary mr-2">•</span>
-                      <span>Attended workshops on computer vision, deep learning, and AI technologies</span>
-                    </li>
-                  </ul>
+                <div className="flex items-start gap-4">
+                  <achievement.icon className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-foreground mb-2">
+                      {achievement.title}
+                    </h3>
+                    <p className="text-sm text-foreground/85 leading-relaxed mb-3">
+                      {achievement.description}
+                    </p>
+                    {achievement.link && (
+                      <Button variant="outline" size="sm" asChild>
+                        <a 
+                          href={achievement.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {achievement.linkText}
+                        </a>
+                      </Button>
+                    )}
+                  </div>
                 </div>
               </div>
+            ))}
+          </div>
+
+          {/* Workshops & Conferences */}
+          <div>
+            <h3 className="text-xl font-bold text-foreground mb-6">Workshops & Conferences</h3>
+            <div className="grid md:grid-cols-2 gap-4">
+              {workshops.map((workshop, index) => (
+                <div 
+                  key={index}
+                  className="bg-card border border-border rounded-md p-5 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1"
+                >
+                  <h4 className="font-semibold text-foreground mb-1">
+                    {workshop.title}
+                  </h4>
+                  <p className="text-xs text-muted-foreground mb-3">
+                    {workshop.location} • {workshop.year}
+                  </p>
+                  <p className="text-sm text-foreground/75 leading-relaxed">
+                    {workshop.description}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
